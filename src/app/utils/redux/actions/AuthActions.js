@@ -11,15 +11,15 @@ import {
     REGISTER_USER_SUCCESS,
     REGISTER_USER_FAIL,
 
-    LOAD_USER_REQUEST,
-    LOAD_USER_SUCCESS,
-    LOAD_USER_FAIL,
-
-    LOGOUT_SUCCESS,
-    LOGOUT_FAIL,
-
     CLEAR_ERRORS
 } from '../constants/AuthConstants'
+
+axios.defaults.withCredentials = true
+
+
+// let link = `/api/auth`
+let link = `${API_Auth}`
+
 
 export const login = (email, password) => async (dispatch) => {
     try {
@@ -27,12 +27,13 @@ export const login = (email, password) => async (dispatch) => {
         dispatch({ type: LOGIN_REQUEST })
 
         const config = {
+            credentials: "include", // added this part
             headers: {
                 'Content-Type': 'application/json'
             }
         }
 
-        const { data } = await axios.post(`${API_Auth}/login`, { email, password }, config)
+        const { data } = await axios.post(`${link}/login`, { email, password }, config)
 
         dispatch({
             type: LOGIN_SUCCESS,
@@ -58,7 +59,7 @@ export const register = (userData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post(`${API_Auth}/register`, userData, config)
+        const { data } = await axios.post(`${link}/register`, userData, config)
 
         dispatch({
             type: REGISTER_USER_SUCCESS,

@@ -1,2 +1,2 @@
-<h1 align="center">API ECOMMERCE MERN - Pizzeria</h1>
-<p align="center"><img src="https://res.cloudinary.com/dky2vpnyr/image/upload/v1678033084/Pizzeria/PartieDev/front_kgvmn1.png" height="500" width="500" alt="Front Ecommerce Pizzeria width Redux"/></p>
+<h1 align="center">Banc de Test - Client AUTH</h1>
+<p align="center"><img src=""/></p>

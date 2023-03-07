@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from "react-router-dom"
-import { Box, Modal, Fade, Typography, Button } from '@mui/material';
+import { Button } from '@mui/material';
 // COMPONENTS LAYOUTS
 import { StylesTextFieldForm } from '../../../components/layouts/styles/StylesTextFieldForm'
 import Loader from '../../../components/layouts/animations/Loader'
@@ -22,13 +22,8 @@ export default function Login() {
     useEffect(() => {
 
         if (isAuthenticated) {
-            navigate(`/`)
+            navigate(`/listUsers`)
         }
-
-        // if (error) {
-        //     alert.error(error)
-        //     dispatch(clearErrors())
-        // }
 
     }, [dispatch, isAuthenticated, navigate])
 
@@ -41,8 +36,7 @@ export default function Login() {
     return loading
                 ?   <Loader />
                 :   <>
-                        <>
-                            <>
+
                                 <form onSubmit={submitHandler} style={{ alignItems: "center", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                                     <h4>Se connecter</h4>
                                     <StylesTextFieldForm
@@ -74,7 +68,6 @@ export default function Login() {
                                     <Link to="/password/forgot">Mot de passe perdu ?</Link>
                                     <Button id="login_button" type="submit">Se connecter</Button>
                                 </form>
-                            </>
-                        </>
+                    
                     </>
 }

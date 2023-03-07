@@ -26,13 +26,8 @@ export default function Register({ }) {
     useEffect(() => {
 
         if (isAuthenticated) {
-            navigate(`/`)
+            navigate(`/listUsers`)
         }
-
-        // if (error) {
-        //     alert.error(error);
-        //     dispatch(clearErrors());
-        // }
 
     }, [dispatch, isAuthenticated])
 

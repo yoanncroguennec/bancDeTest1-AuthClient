@@ -1,12 +1,10 @@
 import { useRoutes } from "react-router-dom";
-import Home_API_Restaurants from "../components/common/home/api_restaurants/Home_API_Restaurants";
+import Home from "../screens/home/Home";
 // LAYOUTS
 import MainLayout from "../components/layouts/MainLayout";
 import Login from "../screens/auth/login/Login";
 import Register from "../screens/auth/register/Register";
-// SCREENS
-import Home from "../screens/home/Home";
-
+import ListUsers from "../screens/listUsers/ListUsers";
 
 
 export default function Router() {
@@ -15,10 +13,9 @@ export default function Router() {
       element: <MainLayout />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/restaurants", element: <Home_API_Restaurants /> },
-        { path: "/login", element: <Login /> },
-        { path: "/register", element: <Register /> },
-
+        { path: "listUsers", element: <ListUsers /> },
+        { path: "login", element: <Login /> },
+        { path: "register", element: <Register /> },
       ]
     }
   ]);
